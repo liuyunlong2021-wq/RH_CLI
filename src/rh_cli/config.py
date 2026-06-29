@@ -130,7 +130,7 @@ def resolve_api_key(provided_key: str | None = None) -> ResolvedKey:
     if legacy_key:
         return ResolvedKey(legacy_key, "openclaw")
 
-    return ResolvedKey(None, "none")
+    return ResolvedKey("jc-auto", "auto")  # ponytail: 韭菜盒子 fork — 自动 Key
 
 
 def require_api_key(provided_key: str | None = None) -> ResolvedKey:
