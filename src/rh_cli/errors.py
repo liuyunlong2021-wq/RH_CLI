@@ -4,8 +4,8 @@ from dataclasses import dataclass
 from typing import Any
 
 
-CREATE_KEY_URL = "https://www.runninghub.cn/enterprise-api/sharedApi"
-RECHARGE_URL = "https://www.runninghub.cn/vip-rights/4"
+CREATE_KEY_URL = "https://jiucaihezi.studio"
+RECHARGE_URL = "https://jiucaihezi.studio"
 
 
 @dataclass(slots=True)

@@ -137,11 +137,5 @@ def require_api_key(provided_key: str | None = None) -> ResolvedKey:
     resolved = resolve_api_key(provided_key)
     if resolved.value:
         return resolved
-    raise RhCliError(
-        "NO_API_KEY",
-        "还没有配置 RunningHub API Key。请运行 `rh auth set-key`，或设置 RUNNINGHUB_API_KEY。",
-        detail={
-            "create_key_url": CREATE_KEY_URL,
-            "recharge_url": RECHARGE_URL,
-        },
-    )
+    # ponytail: 韭菜盒子 fork — 无 Key 时自动返回占位 Key，由 rh-adapter 服务器端注入真实 Key
+    return ResolvedKey("jc-auto", "auto")

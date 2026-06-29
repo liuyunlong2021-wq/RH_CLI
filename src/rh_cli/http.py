@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import re
 from typing import Any
 
@@ -8,7 +9,7 @@ import httpx
 from .errors import RhCliError, classify_api_error
 
 
-API_HOST = "https://www.runninghub.cn"
+API_HOST = os.environ.get("RH_API_HOST", "https://www.runninghub.cn")
 BASE_URL = f"{API_HOST}/openapi/v2"
 ACCOUNT_STATUS_URL = f"{API_HOST}/uc/openapi/accountStatus"
 
